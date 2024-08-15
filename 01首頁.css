@@ -1,0 +1,2114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(10vw);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-block {
+  background: #ffffff;
+  border-radius: 8px;
+}
+@media (max-width:600px){    /*適用小於600像素顯示螢幕*/
+  .icon{
+    position: absolute;
+    position: fixed;
+    left: 1vw;
+    width: 7.5vw;
+    top: 29%;
+    z-index: 20;
+  }
+  
+  .icon img{
+    width: 100%;
+    margin-bottom: 2.5vw;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.4s;
+    z-index: 22;
+  }
+  .icon img:hover{
+    width: 8vw;
+    box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+    transition: 0.4s;
+  }
+.header{                    
+    height: 15vw;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-self: flex-end;
+    position: fixed;
+    z-index: 23;
+}
+.navback{
+  height: 16.5vw;
+  width: 100%;
+  background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+  position: fixed;
+  z-index: 22;
+}
+
+.headerdiv{
+  width: 0%;
+}
+.dropdown {
+ display: none;
+}
+   
+.dropdown-content {
+  display: none;
+}
+
+/**/
+.menu-icon {
+  cursor: pointer;
+  width: 26px;
+  height: 30px;
+  position: absolute;
+  z-index: 24;
+  top: 20%;
+  right: 5vw;
+}
+
+.menu-icon div {
+  background-color: #333;
+  height: 1px;
+  width: 100%;
+  margin: 7px 0;
+  transition: transform 0.5s, opacity 0.5s;
+  z-index: 20;
+}
+
+.menu-icon.change .bar1 {
+  transform: rotate(-45deg) translate(-5.5px, 5.5px);
+}
+
+.menu-icon.change .bar2 {
+  opacity: 0;
+}
+
+.menu-icon.change .bar3 {
+  transform: rotate(45deg) translate(-5.5px, -5.5px);
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+  z-index: 23;
+  padding-top: 50px;
+}
+
+.side-menu.open {
+  transform: translateX(0);
+}
+
+.close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 24;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 15px 10px;
+  font-size: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.side-menu li.open > .submenu {
+  display: block;
+}
+/*大於600置頂輪播圖*/
+.showcasediv{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+/*小於600px置頂輪播圖(手機版)*/
+.uni{
+  padding-top: 16.5vw;
+}
+.unicornimg{
+  width: 20%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 56.24%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+}
+.unicornimgg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.unicornimg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+.unicorndiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 80%;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  z-index: 2;
+}
+
+.unicorn {
+  width: 100%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 70.5%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.rainbow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 2s ease-in-out, transform 6s ease-in;
+}
+
+.rainbow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rainbow.sparkle {
+  opacity: 1;
+  transform: scale(1);
+}
+.scroll-container {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.scroll-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('01首頁/至頂輪播圖手機版/01 (4).jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+ /*王者之路輪播圖*/
+ .carouseldiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vw;
+  margin: 0;
+  background-image:linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/王者之路/01 (4).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.carousel {
+  position: relative;
+  width:65%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 15vw;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.carousel-button:hover{
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+font-size: 12px;
+font-weight: bold;
+}
+
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+.carouselword{
+position: absolute;
+left: 5vw;
+font-size: 2.5vw;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+.carouselword span{
+font-size: 1.8vw;
+}
+/**/
+/*設計中心輪播圖*/
+.sanctuarydiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vw;
+  margin: 0;
+  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/設計中心/01 (11-1).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.sanctuary {
+  width: 65%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 43.29%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-right: 15vw;
+}
+
+.vision-frame {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 2s ease-in-out, transform 6s ease-in;
+}
+
+.vision-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vision-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+.sanctuaryword{
+  position: absolute;
+  right: 8vw;
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sanctuaryword span{
+  font-size: 1.8vw;
+}
+/**/
+.scrol-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrol-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('01首頁/設計中心/挑空內走道.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+/*自地自建*/
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vw;
+  margin: 0;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/自地自建/01 (13).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.thumbnailBox {
+  width: 0%;
+  height: 0;
+  padding-bottom: 16.875%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 5vw;
+}
+.thumbnailImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.thumbnailBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imageSlider {
+  position: relative;
+  width: 65%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 15vw;
+}
+
+.imageGroup {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliderImage {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 5px;
+}
+.navButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.leftNav {
+  left: 10px;
+}
+
+.rightNav {
+  right: 10px;
+}
+
+.sliderText {
+  position: absolute;
+  left: 8vw;
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sliderText span {
+  font-size: 1.8vw;
+}
+/*最新消息*/
+.news{
+  height: 110vw;align-items: center;display: flex;flex-direction: column;
+}
+.newsdiv{
+  width: 60vw;height: 50vw;
+  box-shadow: 2px -8px 15px  rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin-top: 5vw;
+}
+.newsdiv img{
+  width: 60vw;
+  height: 40vw;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0px 18px 16px  rgba(0, 0, 0, 0.5),0px -38px 16px  rgba(0, 0, 0, 0.5);
+}
+.newsdivv{
+  position: relative;
+  padding:0vw 1vw 0 1vw;
+  font-size: 3.4vw;
+  height: 10vw;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e6e6e;
+  display: flex;align-items: center;
+  background-color: rgba(255, 255, 255, 0.705);
+  z-index: 20;
+  transition: 0.5s;
+}
+.newsword{
+  position: absolute;
+  text-align: end;
+  right: 0px;
+  font-size: 2vw;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-right: 1vw;
+}
+.newsdiv:hover{
+  box-shadow: 0 16px 25px 0 rgba(255, 255, 255, 1) , 0 8px 25px 0 rgba(0, 0, 0, 0.8);
+}
+.newsdiv:hover img{
+  transform: scale(1.1);
+  width: 100%;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+.newsdiv:hover .newsdivv{
+  color: rgb(59, 59, 59);
+  font-weight: bolder;
+  font-size: 4vw;
+  transition: 0.5s;
+}
+.scro-container {
+  position: relative;
+  width: 100%;
+  height: 230vw;
+  overflow: hidden;
+}
+
+.scro-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('') no-repeat ;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+/*工程執行*/
+.quantumrealm {
+  display: flex;
+  justify-content: center;align-items: center;
+  height: 50vw;
+  margin: 0;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1) 90%), url("01首頁/工程執行/01 (1).jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 23;
+}
+
+.entropy {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-top: 5vw;
+
+}
+
+.particles {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.particle {
+  min-width: 100%;
+  transition: opacity 0.8s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wave {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  font-size: 8vw;
+  z-index: 10;
+}
+.wave:hover {
+  color: rgb(87, 87, 87);
+  font-size: 8vw;
+  font-weight: bold;
+}
+
+.alpha {
+  left: 2vw;
+  margin-top: 5vw;
+}
+
+.omega {
+  right: 2vw;
+  margin-top: 5vw;
+}
+.textoverlay {
+  position: absolute;
+  left:42vw;
+  margin-top: 3vw;
+  font-size: 2.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.textoverlay span {
+  font-size: 1.8vw;
+}
+
+
+/*頁尾預約設計*/
+.footerdiv{
+  display: flex;height: 20vw;align-items: center;justify-content: center;
+}
+.footerdivv{
+  width: 36vw;height: 10vw;padding: 1vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;margin-top: 3vw;margin-left: 3vw;
+}
+.footerdivv img{
+  height: 100%;display: flex;
+}
+.footerdiva{
+  width: 100%;
+}
+
+
+.footerdivvspan{
+  color: white;
+  font-size: 1.8vw;
+  text-align: center;
+  width: 50%;
+  margin-left: 30%;
+  margin-top: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  transition: 0.5s;
+}
+.footerdivvspan::after{
+  content: '\276F';
+  position: absolute;
+  font-size: 0vw;
+  opacity: 0;
+  top: 3vw;
+  right: 5vw;
+  transition: 0.5s;
+}
+.footerdivv:hover .footerdivvspan::after{
+  opacity: 1;
+  right: 5px;
+}
+.footerdivvspan span{
+  font-size: 0vw;
+  padding: 0.8vw;
+  transition: 0.5s;
+  
+}
+.footerdivv:hover .footerdivvspan{
+  font-size: 1.8vw;
+  transition: 0.5s;
+}
+.footerdivv:hover span{
+  font-size: 0vw ;
+}
+/*footer*/
+.footerlogo{
+  display: flex;justify-content: center;
+}
+.footerlogo img{
+  width: 50vw;
+}
+.footerword{
+  font-size: 0vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.8;
+}
+.footericon{
+  height: 15vw;background-color: black;display: flex;justify-content: center;
+}
+.footericondiv{
+  width: 90%;display: flex;justify-content: space-evenly;height: 6vw;margin-top: 5vw;transition: all 0.5s;
+}
+.footericondiv img{
+  height: 100%;
+  border-radius: 50%;
+  border-width: 0.2vw;
+  border-style: solid;
+  border-color: white;
+  cursor: pointer;
+}
+
+.footericon img:hover{
+  border: none;
+}
+.lastword{
+  font-size: 2vw;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 2vw;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:600px){   /*適用大於600像素小於960像素顯示螢幕*/
+  .icon{
+    position: absolute;
+    position: fixed;
+    left: 1vw;
+    width: 4.5vw;
+    top: 28%;
+    z-index: 22;
+  }
+  
+  .icon img{
+    width: 100%;
+    margin-bottom: 2.5vw;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  .icon img:hover{
+    width: 7vw;
+    box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+    transition: 0.4s;
+  }
+    .header{
+        height: 12vw;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-self: center;
+        position: fixed;
+        z-index: 25;
+    }
+    
+    .navback{
+        height: 12.5vw;
+        width: 100%;
+        background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+        z-index: 19;
+        position: fixed;
+    }
+    
+    .headerdiv{
+        width: 0%;
+    }
+    .dropdown {
+       display: none;
+      }
+         
+      .dropdown-content {
+        display: none;
+      }
+     
+      /**/
+
+.menu-icon {
+    cursor: pointer;
+    width: 38px;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    top: 28%;
+    right: 5vw;
+}
+
+.menu-icon div {
+    background-color: #333;
+    height: 2px;
+    width: 100%;
+    margin: 10px 0;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.menu-icon.change .bar1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.menu-icon.change .bar2 {
+    opacity: 0;
+}
+
+.menu-icon.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+    z-index: 1;
+    padding-top: 80px;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 20px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.side-menu li.open > .submenu {
+    display: block;
+}
+/*大於600置頂輪播圖*/
+.showcasediv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  padding-top: 12.5vw;
+}
+
+.showcase {
+width: 90%; /* 幻燈片區塊佔滿寬度 */
+height: 0;
+padding-bottom: 33.741%; /* 16:9的比例，根據需要調整 */
+position: relative;
+overflow: hidden;
+box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.5),-5px 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.display-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 2s ease-in-out, transform 6s ease-in;
+}
+
+.display-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 圖片按照比例填充，並且保持中心 */
+}
+
+.display-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/**/
+.unicornimg{
+  display: none;
+}
+
+.unicorndiv {
+  display: none;
+}
+.scroll-container {
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.scroll-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('01首頁/置頂輪播圖/01 (4).jpg') no-repeat ;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+ /*王者之路輪播圖*/
+ .carouseldiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+  margin: 0;
+  background-image:linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/王者之路/01 (4).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.carousel {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.carousel-button:hover{
+background-color: rgba(255, 255, 255, 0.705);
+color: rgb(0, 0, 0);
+font-size: 23px;
+font-weight: bold;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+.carouselword{
+position: absolute;
+left: 7.5vw;
+font-size: 2.2vw;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+}
+.carouselword span{
+font-size: 1.4vw;
+}
+
+/*設計中心輪播圖*/
+.sanctuarydiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+  margin: 0;
+  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/設計中心/01 (11-1).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.sanctuary {
+  width: 50%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 33.33%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.vision-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 2s ease-in-out, transform 6s ease-in;
+}
+
+.vision-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vision-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+.sanctuaryword{
+  position: absolute;
+  right: 7vw;
+  font-size: 2.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sanctuaryword span{
+  font-size: 1.4vw;
+}
+/**/
+.scrol-container {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrol-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('01首頁/設計中心/挑空內走道.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+/*自地自建*/
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40vw;
+  margin: 0;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/自地自建/01 (13).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.thumbnailBox {
+  width: 30%;
+  height: 0;
+  padding-bottom: 16.875%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 5vw;
+}
+.thumbnailImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.thumbnailBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imageSlider {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 5vw;
+  margin-left: 3vw;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.imageGroup {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliderImage {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 0.712);
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.leftNav {
+  left: 10px;
+}
+
+.rightNav {
+  right: 10px;
+}
+
+.sliderText {
+  position: absolute;
+  left: 18vw;
+  margin-bottom: 28vw;
+  font-size: 2.2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sliderText span {
+  font-size: 1.4vw;
+}
+/*最新消息*/
+.news{
+  display: flex;justify-content: space-evenly;height: 35vw;align-items: center;padding-left: 11vw;padding-right: 11vw;
+}
+.newsdiv{
+  width: 33vw;height: 28vw;
+  box-shadow: 0px -15px 25px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.newsdiv img{
+  width: 33vw;
+  height: 22vw;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0px 18px 16px  rgba(0, 0, 0, 0.5),0px -38px 16px  rgba(0, 0, 0, 0.5);
+}
+.newsdivv{
+  position: relative;
+  padding:0vw 1vw 0 1vw;
+  font-size: 1.7vw;
+  height: 5vw;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e6e6e;
+  display: flex;align-items: center;
+  background-color: rgba(255, 255, 255, 0.61);
+  z-index: 20;
+  transition: 0.5s;
+}
+.newsword{
+  position: absolute;
+  text-align: end;
+  right: 0px;
+  font-size: 1vw;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-right: 1vw;
+}
+.newsdiv:hover{
+  box-shadow: 0 16px 25px 0 rgba(255, 255, 255, 1) , 0 8px 25px 0 rgba(0, 0, 0, 0.8);
+}
+.newsdiv:hover img{
+  transform: scale(1.1);
+  width: 100%;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+.newsdiv:hover .newsdivv{
+  color: rgb(59, 59, 59);
+  font-weight: bolder;
+  font-size: 2vw;
+  transition: 0.5s;
+}
+.scro-container {
+  position: relative;
+  width: 100%;
+  height: 70vw;
+  overflow: hidden;
+}
+
+.scro-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('') no-repeat ;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+/*工程執行*/
+.quantumrealm {
+  display: flex;
+  justify-content: center;align-items: center;
+  height: 45vw;
+  margin: 0;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1) 90%), url("01首頁/工程執行/01 (1).jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 23;
+}
+
+.entropy {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.particles {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.particle {
+  min-width: 100%;
+  transition: opacity 0.8s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wave {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  font-size: 5vw;
+  z-index: 10;
+}
+.wave:hover {
+  color: rgb(87, 87, 87);
+  font-size: 5.5vw;
+  font-weight: bold;
+}
+
+.alpha {
+  left: 6vw;
+}
+
+.omega {
+  right: 6vw;
+}
+.textoverlay {
+  position: absolute;
+  left:45vw;
+  margin-top: 3vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.textoverlay span {
+  font-size: 1vw;
+}
+
+
+/*頁尾預約設計*/
+.footerdiv{
+  display: flex;height: 15vw;justify-content: space-evenly;align-items: center;
+}
+.footerdivv{
+  width: 36vw;height: 8vw;padding: 0.8vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;
+}
+.footerdivv img{
+  height: 100%;display: flex;
+}
+.footerdiva{
+  width: 100%;
+}
+
+
+.footerdivvspan{
+  color: white;
+  font-size: 1.6vw;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  transition: 0.5s;
+  padding-top: 0.3vw;
+}
+.footerdivvspan::after{
+  content: '\276F';
+  position: absolute;
+  font-size: 3vw;
+  opacity: 0;
+  top: 1.5vw;
+  right: 5vw;
+  transition: 0.5s;
+}
+.footerdivv:hover .footerdivvspan::after{
+  opacity: 1;
+  right: 10px;
+}
+.footerdivvspan span{
+  font-size: 1.1vw;
+  padding: 0.8vw;
+  transition: 0.5s;
+  
+}
+.footerdivv:hover .footerdivvspan{
+  font-size: 1.4vw;
+  transition: 0.5s;
+  padding-right: 2vw;
+}
+.footerdivv:hover span{
+  font-size: 1vw ;
+}
+/*footer*/
+.footerlogo{
+  display: flex;justify-content: center;
+}
+.footerlogo img{
+  width: 30vw;
+}
+.footerword{
+  font-size: 0vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.8;
+}
+/**/
+.footericon{
+  height: 10vw;background-color: black;display: flex;justify-content: center;
+}
+.footericondiv{
+  width: 80%;display: flex;justify-content: space-evenly;height: 5vw;margin-top: 2vw;transition: all 0.5s;
+}
+.footericondiv img{
+  height: 100%;
+  border-radius: 50%;
+  border-width: 0.2vw;
+  border-style: solid;
+  border-color: white;
+  cursor: pointer;
+}
+
+.footericon img:hover{
+  border: none;
+}
+.lastword{
+  font-size: 1vw;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 2vw;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:960px){     /*適用大於960像素顯示螢幕*/
+    .icon{
+      position: absolute;
+      position: fixed;
+      left: 1.5vw;
+      width: 1.5vw;
+      top: 25%;
+      z-index: 22;
+    }
+    
+    .icon img{
+      width: 100%;
+      margin-bottom: 1.5vw;
+      border-radius: 50%;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    .icon img:hover{
+      width: 2.5vw;
+      box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+      transition: 0.4s;
+    }
+    .header{
+        height: 4.5vw;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        position: fixed;
+        padding: 0.5vw;
+        z-index: 25;
+        padding-left: 5.5%;
+    }
+    
+    .navback{
+        height: 5.8vw;
+        width: 100%;
+        background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+        position: fixed;
+        z-index: 19;
+    }
+    
+    .headerdiv{
+        display: flex;
+        justify-content: space-evenly;align-items: center;
+        width: 60%;
+        margin-left: 3vw;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+    .dropbtn {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 0.8vw 1vw;
+        font-size: 1vw;
+        border: none;
+        cursor: pointer;
+        border-radius: 15px;
+        font-weight: bold;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 9vw;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 15px;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 1vw 0.8vw;
+        font-size: 1vw;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+      }
+      
+      .dropdown-content a:hover {
+        background-color: #000000;
+        color: white;
+        border-radius: 15px;
+    }
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown:hover .dropbtn {
+        background-color: #000000;
+        color: white;
+      }
+    
+      
+      /* Second level dropdown */
+      .dropdown-content .sub-dropdown {
+        position: relative;
+      }
+      
+      .sub-dropdown-content {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #ffffff;
+        min-width: 10vw;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        text-align: center;
+        border-radius: 15px;
+      }
+      
+      .sub-dropdown-content a {
+        padding: 1vw 0.8vw;
+      }
+      
+      .sub-dropdown:hover .sub-dropdown-content {
+        display: block;
+      }
+      .menu-icon {
+        cursor: pointer;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        z-index: 2;
+        top: 28%;
+        right: 5vw;
+    }
+    /*大於600置頂輪播圖*/
+    .showcasediv{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      padding-top: 5.5vw;
+  }
+
+  .showcase {
+    width: 90%; /* 幻燈片區塊佔滿寬度 */
+    height: 0;
+    padding-bottom: 33.741%; /* 16:9的比例，根據需要調整 */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.5),-5px 0 20px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .display-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: scale(1.15);
+      transition: opacity 2s ease-in-out, transform 6s ease-in;
+  }
+
+  .display-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 圖片按照比例填充，並且保持中心 */
+  }
+
+  .display-frame.visible {
+      opacity: 1;
+      transform: scale(1);
+  }
+  .scroll-container {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .scroll-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('01首頁/至頂輪播圖手機版/01 (5).jpg') no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+  /*王者之路輪播圖*/
+  .carouseldiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vw;
+    margin: 0;
+    background-image:linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/王者之路/01 (4).jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-image {
+    min-width: 100%;
+    transition: opacity 0.8s ease-in-out;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.carousel-button:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+.carouselword{
+  position: absolute;
+  left: 8vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.carouselword span{
+  font-size: 1vw;
+}
+
+/*設計中心輪播圖*/
+.sanctuarydiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+  margin: 0;
+  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/設計中心/01 (11-1).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.sanctuary {
+  width: 50%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 33.33%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.vision-frame {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 2s ease-in-out, transform 6s ease-in;
+}
+
+.vision-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vision-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+.sanctuaryword{
+  position: absolute;
+  right: 8vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sanctuaryword span{
+  font-size: 1vw;
+}
+/**/
+.scrol-container {
+  position: relative;
+  width: 100%;
+  height: 30vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrol-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('01首頁/設計中心/挑空內走道.jpg') no-repeat ;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+
+/*自地自建*/
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40vw;
+  margin: 0;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(255, 255, 255, 1) 90%), url("01首頁/自地自建/01 (13).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.thumbnailBox {
+  width: 30%;
+  height: 0;
+  padding-bottom: 16.875%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 5vw;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+.thumbnailImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.thumbnailBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.imageSlider {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5vw;
+  margin-left: 3vw;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.imageGroup {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sliderImage {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 25px;
+  border-radius: 10px;
+}
+.navButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.leftNav {
+  left: 10px;
+}
+
+.rightNav {
+  right: 10px;
+}
+
+.sliderText {
+  position: absolute;
+  left: 20vw;
+  margin-bottom: 30vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.sliderText span {
+  font-size: 1vw;
+}
+
+
+/*最新消息*/
+.news{
+  display: flex;justify-content: space-evenly;height: 30vw;align-items: center;padding-left: 17vw;padding-right: 17vw;
+}
+.newsdiv{
+  width: 30vw;height: 25vw;box-shadow: 0px -12px 25px  rgba(0, 0, 0, 0.3);
+  
+  overflow: hidden;
+}
+.newsdiv img{
+  width: 30vw;
+  height: 20vw;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0px 18px 16px  rgba(0, 0, 0, 0.5),0px -38px 16px  rgba(0, 0, 0, 0.5);
+}
+.newsdivv{
+  position: relative;
+  padding:0vw 1vw 0 1vw;
+  font-size: 1.7vw;
+  height: 5vw;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e6e6e;
+  display: flex;align-items: center;
+  background-color: rgba(255, 255, 255, 0.445);
+  z-index: 20;
+  transition: 0.5s;
+}
+.newsword{
+  position: absolute;
+  text-align: end;
+  right: 0px;
+  font-size: 1vw;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  margin-right: 1vw;
+}
+.newsdiv:hover{
+  box-shadow: 0 16px 25px 0 rgba(255, 255, 255, 1) , 0 8px 25px 0 rgba(0, 0, 0, 0.8);
+}
+.newsdiv:hover img{
+  transform: scale(1.1);
+  width: 100%;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+.newsdiv:hover .newsdivv{
+  color: rgb(59, 59, 59);
+  font-weight: bolder;
+  font-size: 2vw;
+  transition: 0.5s;
+}
+.scro-container {
+  position: relative;
+  width: 100%;
+  height: 60vw;
+  background-color: white;
+  overflow: hidden;
+}
+
+
+
+/*工程執行*/
+.quantumrealm {
+  display: flex;
+  justify-content: center;align-items: center;
+  height: 50vw;
+  margin: 0;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1) 90%), url("01首頁/工程執行/01 (1).jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.entropy {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.particles {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+.particle {
+  min-width: 100%;
+  transition: opacity 0.8s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.wave {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  font-size: 5vw;
+  z-index: 10;
+}
+.wave:hover {
+  color: rgb(87, 87, 87);
+  font-size: 5.5vw;
+  font-weight: bold;
+}
+
+.alpha {
+  left: 6vw;
+}
+
+.omega {
+  right: 6vw;
+}
+.textoverlay {
+  position: absolute;
+  left:45vw;
+  margin-top: 3vw;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.textoverlay span {
+  font-size: 1vw;
+}
+/*頁尾預約設計*/
+.footerdiv{
+  display: flex;height: 20vw;justify-content: center;align-items: center;
+}
+.footerdivv{
+  width: 25vw;height: 5vw;padding: 0.5vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;margin-left: 2.5vw;margin-right: 2.5vw;
+}
+.footerdivv img{
+  height: 100%;display: flex;
+}
+.footerdiva{
+  width: 100%;
+}
+
+
+.footerdivvspan{
+  color: white;
+  font-size: 1.4vw;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  transition: 0.5s;
+  padding-top: 0.3vw;
+}
+.footerdivvspan::after{
+  content: '\276F';
+  position: absolute;
+  font-size: 2.5vw;
+  opacity: 0;
+  top: 0.7vw;
+  right: 5vw;
+  transition: 0.5s;
+}
+.footerdivv:hover .footerdivvspan::after{
+  opacity: 1;
+  right: 10px;
+}
+.footerdivvspan span{
+  font-size: 1vw;
+  padding: 0.8vw;
+  transition: 0.5s;
+  
+}
+.footerdivv:hover .footerdivvspan{
+  font-size: 1.2vw;
+  transition: 0.5s;
+  padding-right: 2vw;
+}
+.footerdivv:hover span{
+  font-size: 0.8vw ;
+}
+.footerdivv:hover{
+  box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.6);transition: 0.5s;
+}
+/*footer*/
+.footerlogo{
+  display: flex;justify-content: center;
+}
+.footerlogo img{
+  width: 30vw;
+}
+.footerword{
+  font-size: 1vw;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.8;
+}
+/**/
+.footericon{
+  height: 10vw;background-color: black;display: flex;justify-content: center;
+}
+.footericondiv{
+  width: 60%;display: flex;justify-content: space-evenly;height: 4vw;margin-top: 2vw;transition: all 0.5s;
+}
+.footericondiv img{
+  height: 100%;
+  border-radius: 50%;
+  border-width: 0.2vw;
+  border-style: solid;
+  border-color: white;
+  cursor: pointer;
+}
+
+.footericon img:hover{
+  border: none;
+}
+.lastword{
+  font-size: 1vw;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 2vw;
+}
+
+
+}

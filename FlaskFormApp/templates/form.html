@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京悅線上預約表單</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2 class="form-title">KYID京悅設計<br>線上預約表單</h2>
+    <form action="/submit" method="POST"  onsubmit="return confirmSubmission()">
+        <div class="form-group">
+            <label for="name">姓名*:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>性別*:</label><br>
+            <input type="radio" id="male" name="gender" value="男" required> <label for="male">男</label>
+            <input type="radio" id="female" name="gender" value="女" required> <label for="female">女</label>
+        </div>
+        <div class="form-group">
+            <label>年齡:</label><br>
+            <input type="radio" id="age0" name="age" value="25以下"> <label for="age0">25歲以下</label>
+            <input type="radio" id="age1" name="age" value="25-35"> <label for="age1">25-35</label>
+            <input type="radio" id="age2" name="age" value="35-45"> <label for="age2">35-45</label>
+            <input type="radio" id="age3" name="age" value="45-55"> <label for="age3">45-55</label>
+            <input type="radio" id="age4" name="age" value="55以上"> <label for="age4">55歲以上</label>
+        </div>
+        <div class="form-group">
+            <label for="jobType">職業類型:</label>
+            <input type="text" class="form-control" id="jobType" name="jobType">
+        </div>
+        <div class="form-group">
+            <label for="phone">聯繫電話:</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+            <label for="time">聯繫時間:</label>
+            <input type="text" class="form-control" id="time" name="time">
+        </div>
+        <div class="form-group">
+            <label for="email">電子郵件*:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="buildingName">建案名稱:</label>
+            <input type="text" class="form-control" id="buildingName" name="buildingName">
+        </div>
+        <div class="form-group">
+            <label for="buildingAddress">建案地址:</label>
+            <input type="text" class="form-control" id="buildingAddress" name="buildingAddress">
+        </div>
+        <div class="form-group">
+            <label>屋況:</label><br>
+            <input type="checkbox" id="preSale" name="houseStatus" value="預售屋"> <label for="preSale">預售屋</label>
+            <input type="checkbox" id="newHouse" name="houseStatus" value="新成屋"> <label for="newHouse">新成屋</label>
+            <input type="checkbox" id="selfBuilt" name="houseStatus" value="自地自建"> <label for="selfBuilt">自地自建</label>
+            <!-- 可以添加其他的選項 -->
+        </div>
+        <div class="form-group">
+            <label for="apartmentType">戶型:</label>
+            <input type="text" class="form-control" id="apartmentType" name="apartmentType">
+        </div>
+        <div class="form-group">
+            <label for="floor">樓層:</label>
+            <input type="text" class="form-control" id="floor" name="floor">
+        </div>
+        <div class="form-group">
+            <label for="completionDate">預計交屋日期*:</label>
+            <input type="date" class="form-control" id="completionDate" name="completionDate" required>
+        </div>
+        <div class="form-group">
+            <label for="contactPerson">預計入住時間:</label>
+            <input type="text" class="form-control" id="contactPerson" name="contactPerson" >
+        </div>
+        <div class="form-group">
+            <label for="budget">工程預算:</label>
+            <input type="text" class="form-control" id="budget" name="budget">
+        </div>
+        <div class="form-group">
+            <label for="rooms">櫥櫃/室內坪數:</label>
+            <input type="text" class="form-control" id="rooms" name="rooms">
+        </div>
+        <div class="form-group">
+            <label>現有格局:</label><br>
+            <input type="checkbox" id="room" name="layout" value="房"> <label for="room">房</label>
+            <input type="checkbox" id="kitchen" name="layout" value="廚"> <label for="kitchen">廚</label>
+            <input type="checkbox" id="bathroom" name="layout" value="衛"> <label for="bathroom">衛</label>
+            <!-- 可以添加其他的選項 -->
+        </div>
+        <div class="form-group">
+            <label>人員數量:</label><br>
+            <input type="checkbox" id="single" name="family" value="單人"> <label for="single">單人</label>
+            <input type="checkbox" id="married" name="family" value="雙人"> <label for="married">雙人</label>
+            <input type="checkbox" id="child" name="family" value="多人(3人含以上)"> <label for="child">多人(3人含以上)</label>
+            <!-- 可以添加其他的選項 -->
+        </div>
+        <div class="form-group">
+            <label for="preferences">設計風格偏好:</label>
+            <input type="text" class="form-control" id="preferences" name="preferences">
+        </div>
+        <div class="form-group">
+            <label for="designRequirements">設計需求說明:</label>
+            <textarea class="form-control" id="designRequirements" name="designRequirements" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label>如何知道京悅設計:</label><br>
+            <input type="checkbox" id="website" name="source" value="官網"> <label for="website">官網</label>
+            <input type="checkbox" id="media" name="source" value="平面媒體"> <label for="media">平面媒體</label>
+            <!-- 可以添加其他的選項 -->
+        </div>
+        <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+</div>
+<script>
+    function confirmSubmission() {
+        alert('表單已成功提交！可關閉此頁面，謝謝您');
+        return true;  // Allow form submission to proceed
+    }
+</script>
+
+</body>
+</html>

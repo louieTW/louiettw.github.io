@@ -1,0 +1,4027 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(10vw);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .content-block {
+    background: #ffffff;
+    border-radius: 8px;
+  }
+
+
+@media (max-width:600px){
+    .icon{
+        position: absolute;
+        position: fixed;
+        left: 1vw;
+        width: 7.5vw;
+        top: 27%;
+        z-index: 20;
+      }
+      
+      .icon img{
+        width: 100%;
+        margin-bottom: 2.5vw;
+        border-radius: 50%;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: 0.4s;
+        z-index: 22;
+      }
+      .icon img:hover{
+        width: 8vw;
+        box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+        transition: 0.4s;
+      }
+    .header{                    
+        height: 15vw;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-self: flex-end;
+        position: fixed;
+        z-index: 26;
+    }
+    .navback{
+      height: 16.5vw;
+      width: 100%;
+      background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+      position: fixed;
+      z-index: 22;
+    }
+    
+    .headerdiv{
+      width: 0%;
+    }
+    .dropdown {
+     display: none;
+    }
+       
+    .dropdown-content {
+      display: none;
+    }
+    
+    /**/
+    .menu-icon {
+      cursor: pointer;
+      width: 26px;
+      height: 30px;
+      position: absolute;
+      z-index: 24;
+      top: 20%;
+      right: 5vw;
+    }
+    
+    .menu-icon div {
+      background-color: #333;
+      height: 1px;
+      width: 100%;
+      margin: 7px 0;
+      transition: transform 0.5s, opacity 0.5s;
+      z-index: 20;
+    }
+    
+    .menu-icon.change .bar1 {
+      transform: rotate(-45deg) translate(-5.5px, 5.5px);
+    }
+    
+    .menu-icon.change .bar2 {
+      opacity: 0;
+    }
+    
+    .menu-icon.change .bar3 {
+      transform: rotate(45deg) translate(-5.5px, -5.5px);
+    }
+    
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      transform: translateX(100%);
+      transition: transform 0.5s ease;
+      z-index: 23;
+      padding-top: 50px;
+    }
+    
+    .side-menu.open {
+      transform: translateX(0);
+    }
+    
+    .close-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 24;
+    }
+    
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .side-menu li {
+      padding: 15px 10px;
+      font-size: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .submenu {
+      display: none;
+      padding-left: 20px;
+    }
+    
+    .side-menu li.open > .submenu {
+      display: block;
+    }
+    .maintopimg{
+        width: 100%;height: auto;margin: 16.5vw 0vw 0 0vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+      }
+      
+
+      /*大於600置頂輪播圖*/
+.showcasediv{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    
+  }
+  
+  
+  
+  
+  /*小於600px置頂輪播圖(手機版)*/
+  .unicornimg{
+    width: 20%; /* 幻燈片區塊佔滿寬度 */
+    height: 0;
+    padding-bottom: 56.24%; /* 16:9的比例，根據需要調整 */
+    position: relative;
+    overflow: hidden;
+  }
+  .unicornimgg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .unicornimg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .unicorndiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 80%;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 2;
+  }
+  
+  .unicorn {
+    width: 100%; /* 幻燈片區塊佔滿寬度 */
+    height: 0;
+    padding-bottom: 70.5%; /* 16:9的比例，根據需要調整 */
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+  }
+  
+  .rainbow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.15);
+    transition: opacity 2s ease-in-out, transform 6s ease-in;
+  }
+  
+  .rainbow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .rainbow.sparkle {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .scroll-container {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .scroll-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('03京悅一切/第一滾輪圖.jpg') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+  /**/
+  .KYIDCW{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vw;
+    font-weight:550;
+    padding: 2.5vw 0 2.5vw 0 ;
+}
+.KYIDLN{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vw;
+    font-weight:550;
+    padding: 3vw 0 3vw 0 ;
+}
+
+/*科技整合*/
+.carousel {
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+    width: 100vw;
+}
+.carousel-item img{
+    width: 100%;
+}
+.carousel-item {
+    width: 100%;
+    /* 保证每个子元素都占满整个视窗宽度 */
+}
+.hr1{
+    width: 90%;margin: 0 5% 0 5%;border-width: 2px;margin-top: 0vw;
+}
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1vw 1.5vw;
+    top: 33vw;
+    z-index: 23;
+    font-weight: bold;
+    font-size: 3vw;
+}
+
+.page-number,
+.prev,
+.next {
+    margin: 0 5px;
+    padding: 1vw 1.5vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+.page-number:hover,
+.prev:hover,
+.next:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 5px;
+    padding: 1vw 2vw;
+}
+
+.page-number.active {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 1vw 2vw;
+    border-radius: 5px;
+}
+
+
+/*p1*/
+.divspace{
+    width: 6.25vw;
+}
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    
+    
+    
+}
+.image-rowdiv{
+    width: 25vw;overflow: hidden;height: 24vw;
+    
+}
+.image-rowword{
+    font-size: 2.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:600;
+    margin-top: 1.5vw;
+}
+.image-row img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;overflow: hidden;
+    
+}
+.image-row img:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+    transition: all 0.3;
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    background-color: #ffffff28;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+    margin-top: 10vw;
+}
+
+.toggle-content.open {
+    max-height: 200vw; /* 根據內容調整此高度 */
+}
+
+.image-row img.active {
+    transform: scale(1.05);
+}
+.latest01{
+    display: flex;flex-direction: column;align-items: center;height: 65vw;
+}
+.latest01word{
+    margin-top: 3vw;font-size: 2vw;width: 50%;text-align: start;font-weight: 550;line-height: 1.7;
+}
+.latest01 img{
+    width: 70%;
+    margin-top: 1vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+/*p2*/
+.omega {
+    width: 6.25vw;
+}
+.phi {
+    width: 100%;
+    text-align: center;
+}
+
+.chi {
+    display: flex;
+}
+.psi {
+    width: 25vw;
+    overflow: hidden;
+    height: 24vw;
+}
+.rho {
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:600;
+    margin-top: 1.5vw;
+}
+.sigma {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+.sigma:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+    transition: all 0.3;
+}
+
+.tau {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    background-color: #ffffff28;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+    margin-top: 10vw;
+}
+
+.tau.lambda {
+    max-height: 200vw; /* 根據內容調整此高度 */
+}
+
+.sigma.lambda {
+    transform: scale(1.05);
+}
+.upsilon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vw;
+}
+.xi{
+    margin-top: 3vw;font-size: 1.6vw;width: 50%;text-align: start;font-weight: 550;line-height: 1.7;
+}
+.upsilon img{
+    width: 70%;
+    margin-top: 1vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+ /*科技整合單獨頁1*/
+ .vortyx {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.quinsar {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin: 2vw 0;
+}
+
+.axion{ 
+    background-color: rgb(249, 242, 242);width: 90vw;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.axion:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+    opacity: 0.7;
+}
+
+.nyxx{
+    text-align: start;width: 60%;
+    padding: 1.5vw;
+}
+
+.kairos{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.neura{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8vw;
+}
+
+.quinsar img {
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.zephyrr {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+}
+
+.zephyrr.azura {
+    max-height: 200vw;
+}
+
+.lux{
+    display: flex;flex-direction: column;align-items: center;
+}
+
+.ithis{
+    width: 70%;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    font-weight: 500;
+    line-height: 2.4;
+    margin-top: 3vw;
+}
+
+.lux img{
+    width: 70%;
+    margin-top: 2vw;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+/*科技整合單獨頁2*/
+.z9yqv {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.k7pa3 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin: 2vw 0;
+}
+
+.n4lm0{ 
+    background-color: rgb(249, 242, 242);width: 90vw;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.n4lm0:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+    opacity: 0.7;
+}
+
+.v8krx{
+    text-align: start;width: 60%;
+    padding: 1.5vw;
+}
+
+.w6zpt{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.y9fbq{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8vw;
+}
+
+.k7pa3 img {
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.m3oxl {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+}
+
+.m3oxl.q2rvw {
+    max-height: 200vw; /* 根據內容調整此高度 */
+}
+
+.h8n7r{
+    display: flex;flex-direction: column;align-items: center;
+}
+
+.c4y8t{
+    width: 70%;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    font-weight: 500;
+    line-height: 2.4;
+    margin-top: 3vw;
+}
+
+.h8n7r img{
+    width: 70%;
+    margin-top: 2vw;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*科技整合單獨頁3*/
+.chorus {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.nebula {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    margin: 2vw 0;
+}
+
+.rune{ 
+    background-color: rgb(249, 242, 242);width: 90vw;
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.rune:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+    opacity: 0.7;
+}
+
+.glyph{
+    text-align: start;width: 60%;
+    padding: 1.5vw;
+}
+
+.lore{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+
+.ephemera{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8vw;
+}
+
+.nebula img {
+    width: 40%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.void {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+}
+
+.void.sigil {
+    max-height: 200vw;
+}
+
+.shade{
+    display: flex;flex-direction: column;align-items: center;
+}
+
+.whisper{
+    width: 70%;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    font-weight: 500;
+    line-height: 2.4;
+    margin-top: 3vw;
+}
+
+.shade img{
+    width: 70%;
+    margin-top: 2vw;
+    box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+    /*科技應用整合*/
+    .x1 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .x2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100vw;
+    }
+    
+    .x3 img {
+        width: 100%;
+    }
+    
+    .x3 {
+        width: 100%;
+    }
+    .hr2{
+        width: 90%;margin: 0 5% 0 5%;border-width: 2px;margin-top: 2vw;
+    }
+    
+    .y1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 1vw 1.5vw;
+        top: 33vw;
+        z-index: 23;
+        font-weight: bold;
+        font-size: 3vw;
+    }
+    
+    .y2,
+    .y3,
+    .y4 {
+        margin: 0 5px;
+        padding: 1vw 1.5vw;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    .y2:hover,
+    .y3:hover,
+    .y4:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px;
+        padding: 1vw 2vw;
+    }
+    
+    .y2.z1 {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 1vw 2vw;
+        border-radius: 5px;
+    }
+    
+    
+    /*商辦空間第一頁*/
+    .quark {
+        width: 6.25vw;
+    }
+    .boson {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .fermion {
+        display: flex;
+    }
+    .muon {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .tauon {
+        font-size: 2.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .lepton {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .lepton:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+    
+    .gluon {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 10vw;
+    }
+    
+    .gluon.active {
+        max-height: 200vw; /* Adjust this height based on content */
+    }
+    
+    .lepton.active {
+        transform: scale(1.05);
+    }
+    .neutrino {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65vw;
+    }
+    .hoton {
+        margin-top: 3vw;
+        font-size: 2vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .neutrino img {
+        width: 70%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    /*商辦空間第二頁*/
+    .zippy {
+        width: 6.25vw;
+    }
+    .flibber {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .wobble {
+        display: flex;
+    }
+    .gloop {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .snooze {
+        font-size: 1.4vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .plonk {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .plonk:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+    
+    .florp {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 10vw;
+    }
+    
+    .florp.yip {
+        max-height: 200vw; /* Adjust this height based on content */
+    }
+    
+    .plonk.bam {
+        transform: scale(1.05);
+    }
+    .quack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65vw;
+    }
+    .splat {
+        margin-top: 3vw;
+        font-size: 1.6vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .quack img {
+        width: 70%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .space{
+        height: 17.5vw;
+    }
+
+
+
+    /*新工法新材料單獨頁1*/
+    .zephyr {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .seraph {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .ether{ 
+        background-color: rgb(249, 242, 242);width: 90vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .ether:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .pulse{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .echo{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5vw;
+        font-weight: bold;
+    }
+
+    .aura{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8vw;
+    }
+
+    .seraph img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .void {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .void.lucent {
+        max-height: 200vw;
+    }
+
+    .shade{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .whisper{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .shade img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*新工法新材料單獨頁2*/
+    .axiom {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .prax {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .vex{
+        background-color: rgb(249, 242, 242);width: 90vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .vex:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .nix{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .vox{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5vw;
+        font-weight: bold;
+    }
+
+    .luxe{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8vw;
+    }
+
+    .prax img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .crypt {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .crypt.sig {
+        max-height: 200vw;
+    }
+
+    .drex{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .zen{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .drex img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*新工法新材料單獨頁3*/
+    .vael {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .erion {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .cylix{ 
+        background-color: rgb(249, 242, 242);width: 90vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .cylix:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .thrix{
+        text-align: start;width: 60%;
+        padding: 2vw;
+    }
+
+    .nyx{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5vw;
+        font-weight: bold;
+    }
+
+    .mora{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.8vw;
+    }
+
+    .erion img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .vellum {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .vellum.sylph {
+        max-height: 200vw;
+    }
+
+    .lumina{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .haeli{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .lumina img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+
+    /*頁尾預約設計*/
+.footerdiv{
+    display: flex;height: 20vw;align-items: center;justify-content: center;
+  }
+  .footerdivv{
+    width: 36vw;height: 10vw;padding: 1vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;margin-top: 3vw;margin-left: 3vw;
+  }
+  .footerdivv img{
+    height: 100%;display: flex;
+  }
+  .footerdiva{
+    width: 100%;
+  }
+  
+  
+  .footerdivvspan{
+    color: white;
+    font-size: 1.8vw;
+    text-align: center;
+    width: 50%;
+    margin-left: 30%;
+    margin-top: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    transition: 0.5s;
+  }
+  .footerdivvspan::after{
+    content: '\276F';
+    position: absolute;
+    font-size: 0vw;
+    opacity: 0;
+    top: 3vw;
+    right: 5vw;
+    transition: 0.5s;
+  }
+  .footerdivv:hover .footerdivvspan::after{
+    opacity: 1;
+    right: 5px;
+  }
+  .footerdivvspan span{
+    font-size: 0vw;
+    padding: 0.8vw;
+    transition: 0.5s;
+    
+  }
+  .footerdivv:hover .footerdivvspan{
+    font-size: 1.8vw;
+    transition: 0.5s;
+  }
+  .footerdivv:hover span{
+    font-size: 0vw ;
+  }
+  /*footer*/
+  .footerlogo{
+    display: flex;justify-content: center;
+  }
+  .footerlogo img{
+    width: 50vw;
+  }
+  .footerword{
+    font-size: 0vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+  .footericon{
+    height: 15vw;background-color: black;display: flex;justify-content: center;
+  }
+  .footericondiv{
+    width: 90%;display: flex;justify-content: space-evenly;height: 6vw;margin-top: 5vw;transition: all 0.5s;
+  }
+  .footericondiv img{
+    height: 100%;
+    border-radius: 50%;
+    border-width: 0.2vw;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+  }
+  
+  .footericon img:hover{
+    border: none;
+  }
+  .lastword{
+    font-size: 2vw;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 2vw;
+  }
+  .scrol-container {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scrol-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('04設計呈現/5陳設藝術02.jpg') no-repeat center ;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:600px){
+    .icon{
+        position: absolute;
+        position: fixed;
+        left: 1vw;
+        width: 4.5vw;
+        top: 28%;
+        z-index: 22;
+      }
+      
+      .icon img{
+        width: 100%;
+        margin-bottom: 2.5vw;
+        border-radius: 50%;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .icon img:hover{
+        width: 7vw;
+        box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+        transition: 0.4s;
+      }
+        .header{
+            height: 12vw;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-self: center;
+            position: fixed;
+            z-index: 25;
+        }
+        .navback{
+            height: 12.5vw;
+            width: 100%;
+            background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+            z-index: 19;
+            position: fixed;
+        }
+        
+        .headerdiv{
+            width: 0%;
+        }
+        .dropdown {
+           display: none;
+          }
+             
+          .dropdown-content {
+            display: none;
+          }
+         
+          /**/
+    
+    .menu-icon {
+        cursor: pointer;
+        width: 38px;
+        height: 30px;
+        position: absolute;
+        z-index: 2;
+        top: 28%;
+        right: 5vw;
+    }
+    
+    .menu-icon div {
+        background-color: #333;
+        height: 2px;
+        width: 100%;
+        margin: 10px 0;
+        transition: transform 0.5s, opacity 0.5s;
+    }
+    
+    .menu-icon.change .bar1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    
+    .menu-icon.change .bar2 {
+        opacity: 0;
+    }
+    
+    .menu-icon.change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    
+    .side-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+        z-index: 1;
+        padding-top: 80px;
+    }
+    
+    .side-menu.open {
+        transform: translateX(0);
+    }
+    
+    .close-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .side-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .side-menu li {
+        padding: 20px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        position: relative;
+        text-shadow: 2px 2px 4px #000000;
+    }
+    
+    .submenu {
+        display: none;
+        padding-left: 20px;
+    }
+    
+    .side-menu li.open > .submenu {
+        display: block;
+    }
+    .maintopimg{
+        width: 90%;height: auto;margin: 12.5vw 5% 0 5%;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+      }
+
+
+      /*大於600置頂輪播圖*/
+.showcasediv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin-top: 5vw;
+  }
+  
+  .showcase {
+  width: 90%; /* 幻燈片區塊佔滿寬度 */
+  height: 0;
+  padding-bottom: 33.741%; /* 16:9的比例，根據需要調整 */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.5),-5px 0 20px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  .display-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1.15);
+    transition: opacity 2s ease-in-out, transform 6s ease-in;
+  }
+  
+  .display-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 圖片按照比例填充，並且保持中心 */
+  }
+  
+  .display-frame.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /**/
+  .unicornimg{
+    display: none;
+  }
+  
+  .unicorndiv {
+    display: none;
+  }
+  .scroll-container {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .scroll-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('01首頁/置頂輪播圖/01 (4).jpg') no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+  /**/
+  .KYIDCW{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    font-weight:550;
+    padding: 1.8vw 0 1.8vw 0 ;
+}
+.KYIDLN{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    font-weight:550;
+    padding: 1.8vw 0 1.8vw 0 ;
+}
+
+/*科技整合1*/
+.carousel {
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+    width: 100vw;
+}
+.carousel-item img{
+    width: 100%;
+}
+.carousel-item {
+    width: 100%;
+    /* 保证每个子元素都占满整个视窗宽度 */
+}
+.hr1{
+    width: 90%;margin: 0 5% 0 5%;border-width: 2px;margin-top: 0vw;
+}
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1vw 1.5vw;
+    top: 28vw;
+    z-index: 23;
+    font-weight: bold;
+}
+
+.page-number,
+.prev,
+.next {
+    margin: 0 5px;
+    padding: 1vw 1.5vw;
+    cursor: pointer;
+    font-weight: bold;
+}
+.page-number:hover,
+.prev:hover,
+.next:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 5px;
+    padding: 1vw 1.5vw;
+}
+
+.page-number.active {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 1vw 1.5vw;
+    border-radius: 5px;
+}
+
+
+/*p1*/
+.divspace{
+    width: 6.25vw;
+}
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.image-row {
+    display: flex;
+    
+    
+    
+}
+.image-rowdiv{
+    width: 25vw;overflow: hidden;height: 24vw;
+    
+}
+.image-rowword{
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:600;
+    margin-top: 1.5vw;
+}
+.image-row img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;overflow: hidden;
+    
+}
+.image-row img:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+    transition: all 0.3;
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    background-color: #ffffff28;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+    margin-top: 5vw;
+}
+
+.toggle-content.open {
+    max-height: 200vw; /* 根據內容調整此高度 */
+}
+
+.image-row img.active {
+    transform: scale(1.05);
+}
+.latest01{
+    display: flex;flex-direction: column;align-items: center;height: 65vw;
+}
+.latest01word{
+    margin-top: 3vw;font-size: 1.6vw;width: 50%;text-align: start;font-weight: 550;line-height: 1.7;
+}
+.latest01 img{
+    width: 70%;
+    margin-top: 1vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+/*p2*/
+.omega {
+    width: 6.25vw;
+}
+.phi {
+    width: 100%;
+    text-align: center;
+}
+
+.chi {
+    display: flex;
+}
+.psi {
+    width: 25vw;
+    overflow: hidden;
+    height: 24vw;
+}
+.rho {
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:600;
+    margin-top: 1.5vw;
+}
+.sigma {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+.sigma:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+    transition: all 0.3;
+}
+
+.tau {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 200vw;
+    margin: 0 auto;
+    background-color: #ffffff28;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: max-height 0.5s ease;
+    margin-top: 5vw;
+}
+
+.tau.lambda {
+    max-height: 200vw; /* 根據內容調整此高度 */
+}
+
+.sigma.lambda {
+    transform: scale(1.05);
+}
+.upsilon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vw;
+}
+.xi{
+    margin-top: 3vw;font-size: 1.6vw;width: 50%;text-align: start;font-weight: 550;line-height: 1.7;
+}
+.upsilon img{
+    width: 70%;
+    margin-top: 1vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+    
+    /*科技整合單獨頁1*/
+    .vortyx {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .quinsar {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .axion{ 
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .axion:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .nyxx{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .kairos{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .neura{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .quinsar img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .zephyrr {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .zephyrr.azura {
+        max-height: 200vw;
+    }
+
+    .lux{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .ithis{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .lux img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*科技整合單獨頁2*/
+    .z9yqv {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .k7pa3 {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .n4lm0{ 
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .n4lm0:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .v8krx{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .w6zpt{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .y9fbq{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .k7pa3 img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .m3oxl {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .m3oxl.q2rvw {
+        max-height: 200vw; /* 根據內容調整此高度 */
+    }
+
+    .h8n7r{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .c4y8t{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .h8n7r img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+   
+
+    
+
+
+    /*科技整合單獨頁3*/
+    .chorus {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .nebula {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .rune{ 
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .rune:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .glyph{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .lore{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .ephemera{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .nebula img {
+        width: 40%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .void {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .void.sigil {
+        max-height: 200vw;
+    }
+
+    .shade{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .whisper{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .shade img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*科技應用整合*/
+    .x1 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .x2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100vw;
+    }
+
+    .x3 img {
+        width: 100%;
+    }
+
+    .x3 {
+        width: 100%;
+    }
+
+    .y1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 1vw 1.5vw;
+        top: 28vw;
+        z-index: 23;
+        font-weight: bold;
+    }
+
+    .y2,
+    .y3,
+    .y4 {
+        margin: 0 5px;
+        padding: 1vw 1.5vw;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .y2:hover,
+    .y3:hover,
+    .y4:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px;
+        padding: 1vw 1.5vw;
+    }
+
+    .y2.z1 {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 1vw 1.5vw;
+        border-radius: 5px;
+    }
+
+
+    /*商辦空間第一頁*/
+    .quark {
+        width: 6.25vw;
+    }
+    .boson {
+        width: 100%;
+        text-align: center;
+    }
+
+    .fermion {
+        display: flex;
+    }
+    .muon {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .tauon {
+        font-size: 1.4vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .lepton {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .lepton:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .gluon {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 5vw;
+    }
+
+    .gluon.active {
+        max-height: 200vw; /* Adjust this height based on content */
+    }
+
+    .lepton.active {
+        transform: scale(1.05);
+    }
+    .neutrino {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65vw;
+    }
+    .hoton {
+        margin-top: 3vw;
+        font-size: 1.6vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .neutrino img {
+        width: 70%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*商辦空間第二頁*/
+    .zippy {
+        width: 6.25vw;
+    }
+    .flibber {
+        width: 100%;
+        text-align: center;
+    }
+
+    .wobble {
+        display: flex;
+    }
+    .gloop {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .snooze {
+        font-size: 1.4vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .plonk {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .plonk:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .florp {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 5vw;
+    }
+
+    .florp.yip {
+        max-height: 200vw; /* Adjust this height based on content */
+    }
+
+    .plonk.bam {
+        transform: scale(1.05);
+    }
+    .quack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 65vw;
+    }
+    .splat {
+        margin-top: 3vw;
+        font-size: 1.6vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .quack img {
+        width: 70%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .space{
+        height: 13.5vw;
+    }
+
+
+     /*新工法新材料單獨頁1*/
+     .zephyr {
+        width: 100%;
+        height: auto;
+        margin: 3vw auto;
+        text-align: center;
+    }
+
+    .seraph {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 3vw auto;
+        margin: 2vw 0;
+    }
+
+    .ether{ 
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .ether:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .pulse{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .echo{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .aura{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .seraph img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .void {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .void.lucent {
+        max-height: 200vw;
+    }
+
+    .shade{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .whisper{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .shade img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*新工法新材料單獨頁2*/
+    .axiom {
+        width: 100%;
+        height: auto;
+        margin: 3vw auto;
+        text-align: center;
+    }
+
+    .prax {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 3vw auto;
+        margin: 2vw 0;
+    }
+
+    .vex{
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .vex:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .nix{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .vox{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .luxe{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .prax img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .crypt {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .crypt.sig {
+        max-height: 200vw;
+    }
+
+    .drex{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .zen{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .drex img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*新工法新材料單獨頁3*/
+    .vael {
+        width: 100%;
+        height: auto;
+        margin: 3vw auto;
+        text-align: center;
+    }
+
+    .erion {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 3vw auto;
+        margin: 2vw 0;
+    }
+
+    .cylix{ 
+        background-color: rgb(249, 242, 242);width: 70vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .cylix:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .thrix{
+        text-align: start;width: 60%;
+        padding: 2vw;
+    }
+
+    .nyx{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+
+    .mora{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.4vw;
+    }
+
+    .erion img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .vellum {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 200vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .vellum.sylph {
+        max-height: 200vw;
+    }
+
+    .lumina{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .haeli{
+        width: 70%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .lumina img{
+        width: 70%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*頁尾預約設計*/
+.footerdiv{
+    display: flex;height: 15vw;justify-content: space-evenly;align-items: center;
+  }
+  .footerdivv{
+    width: 36vw;height: 8vw;padding: 0.8vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;
+  }
+  .footerdivv img{
+    height: 100%;display: flex;
+  }
+  .footerdiva{
+    width: 100%;
+  }
+  
+  
+  .footerdivvspan{
+    color: white;
+    font-size: 1.6vw;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    transition: 0.5s;
+    padding-top: 0.3vw;
+  }
+  .footerdivvspan::after{
+    content: '\276F';
+    position: absolute;
+    font-size: 3vw;
+    opacity: 0;
+    top: 1.5vw;
+    right: 5vw;
+    transition: 0.5s;
+  }
+  .footerdivv:hover .footerdivvspan::after{
+    opacity: 1;
+    right: 10px;
+  }
+  .footerdivvspan span{
+    font-size: 1.1vw;
+    padding: 0.8vw;
+    transition: 0.5s;
+    
+  }
+  .footerdivv:hover .footerdivvspan{
+    font-size: 1.4vw;
+    transition: 0.5s;
+    padding-right: 2vw;
+  }
+  .footerdivv:hover span{
+    font-size: 1vw ;
+  }
+  /*footer*/
+  .footerlogo{
+    display: flex;justify-content: center;
+  }
+  .footerlogo img{
+    width: 30vw;
+  }
+  .footerword{
+    font-size: 0vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+  /**/
+  .footericon{
+    height: 10vw;background-color: black;display: flex;justify-content: center;
+  }
+  .footericondiv{
+    width: 80%;display: flex;justify-content: space-evenly;height: 5vw;margin-top: 2vw;transition: all 0.5s;
+  }
+  .footericondiv img{
+    height: 100%;
+    border-radius: 50%;
+    border-width: 0.2vw;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+  }
+  
+  .footericon img:hover{
+    border: none;
+  }
+  .lastword{
+    font-size: 1vw;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 2vw;
+  }
+  .scrol-container {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scrol-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('05設計中心/頁尾.jpg') no-repeat center ;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:960px){
+    .icon{
+        position: absolute;
+        position: fixed;
+        left: 1.5vw;
+        width: 1.5vw;
+        top: 25%;
+        z-index: 22;
+      }
+      
+      .icon img{
+        width: 100%;
+        margin-bottom: 1.5vw;
+        border-radius: 50%;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .icon img:hover{
+        width: 2.5vw;
+        box-shadow: 0 16px 25px 0 rgba(0, 0, 0, 0.7);
+        transition: 0.4s;
+      }
+      .header{
+          height: 4.5vw;
+          width: 100%;
+          background-color: rgb(255, 255, 255);
+          display: flex;
+          position: fixed;
+          padding: 0.5vw;
+          z-index: 25;
+          padding-left: 5.5%;
+      }
+      
+      .navback{
+          height: 5.8vw;
+          width: 100%;
+          background-image: linear-gradient(to left, grey, rgb(255, 255, 255));
+          position: fixed;
+          z-index: 19;
+      }
+      
+      .headerdiv{
+          display: flex;
+          justify-content: space-evenly;align-items: center;
+          width: 60%;
+          margin-left: 3vw;
+      }
+      .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+      .dropbtn {
+          background-color: #ffffff;
+          color: rgb(0, 0, 0);
+          padding: 0.8vw 1vw;
+          font-size: 1vw;
+          border: none;
+          cursor: pointer;
+          border-radius: 15px;
+          font-weight: bold;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #ffffff;
+          min-width: 9vw;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          border-radius: 15px;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 1vw 0.8vw;
+          font-size: 1vw;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+        }
+        
+        .dropdown-content a:hover {
+          background-color: #000000;
+          color: white;
+          border-radius: 15px;
+      }
+        
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+          background-color: #000000;
+          color: white;
+        }
+      
+        
+        /* Second level dropdown */
+        .dropdown-content .sub-dropdown {
+          position: relative;
+        }
+        
+        .sub-dropdown-content {
+          display: none;
+          position: absolute;
+          left: 100%;
+          top: 0;
+          background-color: #ffffff;
+          min-width: 10vw;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          text-align: center;
+          border-radius: 15px;
+        }
+        
+        .sub-dropdown-content a {
+          padding: 1vw 0.8vw;
+        }
+        
+        .sub-dropdown:hover .sub-dropdown-content {
+          display: block;
+        }
+        .menu-icon {
+          cursor: pointer;
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          z-index: 2;
+          top: 28%;
+          right: 5vw;
+      }
+      .maintopimg{
+        width: 90%;height: auto;margin: 5.8vw 5% 0 5%;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+      }
+
+
+       /*大於600置頂輪播圖*/
+    .showcasediv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        margin-top: 5vw;
+    }
+  
+    .showcase {
+      width: 90%; /* 幻燈片區塊佔滿寬度 */
+      height: 0;
+      padding-bottom: 33.741%; /* 16:9的比例，根據需要調整 */
+      position: relative;
+      overflow: hidden;
+      box-shadow: 5px 0 20px 0 rgba(0, 0, 0, 0.5),-5px 0 20px 0 rgba(0, 0, 0, 0.5);
+    }
+  
+    .display-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: scale(1.15);
+        transition: opacity 2s ease-in-out, transform 6s ease-in;
+    }
+  
+    .display-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 圖片按照比例填充，並且保持中心 */
+    }
+  
+    .display-frame.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .scroll-container {
+      position: relative;
+      width: 100%;
+      height: 30vw;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    
+    .scroll-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('01首頁/至頂輪播圖手機版/01 (5).jpg') no-repeat ;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: -1;
+    }
+
+    /**/
+    .KYIDCW{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2vw;
+        font-weight:550;
+        padding: 1.5vw 0 1.5vw 0 ;
+    }
+    .KYIDLN{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6vw;
+        font-weight:550;
+        padding: 1.5vw 0 1.5vw 0 ;
+    }
+
+
+    /*科技整合1*/
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        
+        width: 100vw;
+    }
+    .carousel-item img{
+        width: 100%;
+    }
+    .carousel-item {
+        width: 100%;
+    }
+    .hr1{
+        width: 90%;margin: 0 5% 0 5%;border-width: 2px;margin-top: 0vw;
+    }
+    .pagination {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0.5vw 0.75vw;
+        top: 24vw;
+        z-index: 23;
+        font-weight: bold;
+    }
+    
+    .page-number,
+    .prev,
+    .next {
+        margin: 0 5px;
+        padding: 0.5vw 0.75vw;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .page-number:hover,
+    .prev:hover,
+    .next:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px;
+        padding: 0.5vw 0.75vw;
+    }
+    
+    .page-number.active {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 0.5vw 0.75vw;
+        border-radius: 5px;
+    }
+
+    
+    /*p1*/
+    .divspace{
+        width: 6.25vw;
+    }
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .image-row {
+        display: flex;
+        
+        
+        
+    }
+    .image-rowdiv{
+        width: 25vw;overflow: hidden;height: 24vw;
+        
+    }
+    .image-rowword{
+        font-size: 1.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:600;
+        margin-top: 1.5vw;
+    }
+    .image-row img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;overflow: hidden;
+        
+    }
+    .image-row img:hover{
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .toggle-content {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 1vw;
+    }
+
+    .toggle-content.open {
+        max-height: 150vw; /* 根據內容調整此高度 */
+    }
+
+    .image-row img.active {
+        transform: scale(1.05);
+    }
+    .latest01{
+        display: flex;flex-direction: column;align-items: center;height: 46vw;
+    }
+    .latest01word{
+        margin-top: 2vw;font-size: 1.2vw;width: 50%;text-align: start;font-weight: 550;line-height: 1.7;
+    }
+    .latest01 img{
+        width: 50%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*p2*/
+    .omega {
+        width: 6.25vw;
+    }
+    .phi {
+        width: 100%;
+        text-align: center;
+    }
+
+    .chi {
+        display: flex;
+    }
+    .psi {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .rho {
+        font-size: 1.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:600;
+        margin-top: 1.5vw;
+    }
+    .sigma {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .sigma:hover{
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .tau {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 1vw;
+    }
+
+    .tau.lambda {
+        max-height: 150vw; /* 根據內容調整此高度 */
+    }
+
+    .sigma.lambda {
+        transform: scale(1.05);
+    }
+    .upsilon{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 46vw;
+    }
+    .xi{
+        margin-top: 2vw;
+        font-size: 1.2vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .upsilon img{
+        width: 50%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*科技整合單獨頁1*/
+    .vortyx {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .quinsar {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .axion{ 
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .axion:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .nyxx{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .kairos{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .neura{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .quinsar img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .zephyrr {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .zephyrr.azura {
+        max-height: 150vw;
+    }
+
+    .lux{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .ithis{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .lux img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*科技整合單獨頁2*/
+    .z9yqv {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .k7pa3 {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .n4lm0{ 
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .n4lm0:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .v8krx{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .w6zpt{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .y9fbq{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .k7pa3 img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .m3oxl {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .m3oxl.q2rvw {
+        max-height: 150vw; /* 根據內容調整此高度 */
+    }
+
+    .h8n7r{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .c4y8t{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .h8n7r img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*科技整合單獨頁3*/
+    .chorus {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .nebula {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .rune{ 
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .rune:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .glyph{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .lore{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .ephemera{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .nebula img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .void {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .void.sigil {
+        max-height: 150vw;
+    }
+
+    .shade{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .whisper{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .shade img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+
+     /*科技應用整合*/
+     .x1 {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .x2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100vw;
+    }
+
+    .x3 img {
+        width: 100%;
+    }
+
+    .x3 {
+        width: 100%;
+    }
+
+    .y1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0.5vw 0.75vw;
+        top: 24vw;
+        z-index: 23;
+        font-weight: bold;
+    }
+
+    .y2,
+    .y3,
+    .y4 {
+        margin: 0 5px;
+        padding: 0.5vw 0.75vw;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .y2:hover,
+    .y3:hover,
+    .y4:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px;
+        padding: 0.5vw 0.75vw;
+    }
+
+    .y2.z1 {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 0.5vw 0.75vw;
+        border-radius: 5px;
+    }
+
+
+    /*商辦空間第一頁*/
+    .quark {
+        width: 6.25vw;
+    }
+    .boson {
+        width: 100%;
+        text-align: center;
+    }
+
+    .fermion {
+        display: flex;
+    }
+    .muon {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .tauon {
+        font-size: 1.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .lepton {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .lepton:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .gluon {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 1vw;
+    }
+
+    .gluon.active {
+        max-height: 150vw; /* Adjust this height based on content */
+    }
+
+    .lepton.active {
+        transform: scale(1.05);
+    }
+    .neutrino {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 46vw;
+    }
+    .hoton {
+        margin-top: 2vw;
+        font-size: 1.2vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .neutrino img {
+        width: 50%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*商辦空間第二頁*/
+    .zippy {
+        width: 6.25vw;
+    }
+    .flibber {
+        width: 100%;
+        text-align: center;
+    }
+
+    .wobble {
+        display: flex;
+    }
+    .gloop {
+        width: 25vw;
+        overflow: hidden;
+        height: 24vw;
+    }
+    .snooze {
+        font-size: 1.2vw;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-top: 1.5vw;
+    }
+    .plonk {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .plonk:hover {
+        transform: scale(1.1);
+        opacity: 0.7;
+        transition: all 0.3;
+    }
+
+    .florp {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        background-color: #ffffff28;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+        margin-top: 1vw;
+    }
+
+    .florp.yip {
+        max-height: 150vw; /* Adjust this height based on content */
+    }
+
+    .plonk.bam {
+        transform: scale(1.05);
+    }
+    .quack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 46vw;
+    }
+    .splat {
+        margin-top: 2vw;
+        font-size: 1.2vw;
+        width: 50%;
+        text-align: start;
+        font-weight: 550;
+        line-height: 1.7;
+    }
+    .quack img {
+        width: 50%;
+        margin-top: 1vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+    .space{
+        height: 6.5vw;
+    }
+     
+
+
+    /*新工法新材料單獨頁1*/
+    .zephyr {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .seraph {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .ether{ 
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .ether:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .pulse{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .echo{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .aura{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .seraph img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .void {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .void.lucent {
+        max-height: 150vw;
+    }
+
+    .shade{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .whisper{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .shade img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*新工法新材料單獨頁2*/
+    .axiom {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .prax {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .vex{
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .vex:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .nix{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .vox{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .luxe{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .prax img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .crypt {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .crypt.sig {
+        max-height: 150vw;
+    }
+
+    .drex{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .zen{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .drex img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    /*新工法新材料單獨頁3*/
+    .vael {
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .erion {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin: 2vw 0;
+    }
+
+    .cylix{ 
+        background-color: rgb(249, 242, 242);width: 50vw;
+        box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .cylix:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    .thrix{
+        text-align: start;width: 60%;
+        padding: 1.5vw;
+    }
+
+    .nyx{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        font-weight: bold;
+    }
+
+    .mora{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1vw;
+    }
+
+    .erion img {
+        width: 40%;
+        height: 100%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .vellum {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 150vw;
+        margin: 0 auto;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+        background-color: #ffffff;
+        border-radius: 5px;
+        transition: max-height 0.5s ease;
+    }
+
+    .vellum.sylph {
+        max-height: 150vw;
+    }
+
+    .lumina{
+        display: flex;flex-direction: column;align-items: center;
+    }
+
+    .haeli{
+        width: 50%;
+        text-align: start;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2vw;
+        font-weight: 500;
+        line-height: 2.4;
+        margin-top: 3vw;
+    }
+
+    .lumina img{
+        width: 50%;
+        margin-top: 2vw;
+        box-shadow:  0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    }
+
+
+    /*頁尾預約設計*/
+.footerdiv{
+    display: flex;height: 20vw;justify-content: center;align-items: center;
+  }
+  .footerdivv{
+    width: 25vw;height: 5vw;padding: 0.5vw;background-color: rgb(45, 45, 45);display: flex;cursor: pointer;margin-left: 2.5vw;margin-right: 2.5vw;
+  }
+  .footerdivv img{
+    height: 100%;display: flex;
+  }
+  .footerdiva{
+    width: 100%;
+  }
+  
+  
+  .footerdivvspan{
+    color: white;
+    font-size: 1.4vw;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    transition: 0.5s;
+    padding-top: 0.3vw;
+  }
+  .footerdivvspan::after{
+    content: '\276F';
+    position: absolute;
+    font-size: 2.5vw;
+    opacity: 0;
+    top: 0.7vw;
+    right: 5vw;
+    transition: 0.5s;
+  }
+  .footerdivv:hover .footerdivvspan::after{
+    opacity: 1;
+    right: 10px;
+  }
+  .footerdivvspan span{
+    font-size: 1vw;
+    padding: 0.8vw;
+    transition: 0.5s;
+    
+  }
+  .footerdivv:hover .footerdivvspan{
+    font-size: 1.2vw;
+    transition: 0.5s;
+    padding-right: 2vw;
+  }
+  .footerdivv:hover span{
+    font-size: 0.8vw ;
+  }
+  .footerdivv:hover{
+    box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.6);transition: 0.5s;
+  }
+  /*footer*/
+  .footerlogo{
+    display: flex;justify-content: center;
+  }
+  .footerlogo img{
+    width: 30vw;
+  }
+  .footerword{
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.8;
+  }
+  /**/
+  .footericon{
+    height: 10vw;background-color: black;display: flex;justify-content: center;
+  }
+  .footericondiv{
+    width: 60%;display: flex;justify-content: space-evenly;height: 4vw;margin-top: 2vw;transition: all 0.5s;
+  }
+  .footericondiv img{
+    height: 100%;
+    border-radius: 50%;
+    border-width: 0.2vw;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+  }
+  
+  .footericon img:hover{
+    border: none;
+  }
+  .lastword{
+    font-size: 1vw;
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 2vw;
+  }
+  .scrol-container {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scrol-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('05設計中心/頁尾.jpg') no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+
+}
+
+
